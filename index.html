@@ -1,1 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manan Patel | Portfolio</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      background: #f4f7fb;
+      color: #222;
+    }
+
+    header {
+      background: linear-gradient(135deg, #0f4c81, #1d78c1);
+      color: white;
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    header h1 {
+      font-size: 42px;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 24px;
+      background: white;
+      color: #0f4c81;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 6px;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #e6eef7;
+    }
+
+    nav {
+      background: #083358;
+      text-align: center;
+      padding: 12px 0;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      width: 85%;
+      max-width: 1000px;
+      margin: 40px auto;
+    }
+
+    .card {
+      background: white;
+      padding: 30px;
+      margin-bottom: 25px;
+      border-radius: 12px;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+    }
+
+    h2 {
+      color: #0f4c81;
+      margin-bottom: 15px;
+      border-bottom: 2px solid #dbe7f3;
+      padding-bottom: 8px;
+    }
+
+    ul {
+      margin-left: 20px;
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+    }
+
+    .project-box {
+      background: #f9fbfd;
+      border: 1px solid #d8e4f0;
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    .project-box h3 {
+      margin-bottom: 10px;
+      color: #083358;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #083358;
+      color: white;
+      margin-top: 40px;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 30px;
+      }
+
+      nav a {
+        display: inline-block;
+        margin: 8px 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Manan Patel</h1>
+    <p>Computer Science Student | Cybersecurity Enthusiast | Technology Learner</p>
+    <a class="btn" href="https://github.com/Mananpatelllll" target="_blank">Visit My GitHub</a>
+  </header>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <div class="container">
+
+    <section id="about" class="card">
+      <h2>About Me</h2>
+      <p>
+        Hello! My name is Manan Patel. I am a Computer Science student with a strong interest
+        in cybersecurity, programming, and technology. I enjoy learning new skills, solving
+        problems, and working on projects that help me grow in the field of IT.
+      </p>
+    </section>
+
+    <section id="skills" class="card">
+      <h2>Skills & Interests</h2>
+      <ul>
+        <li>C++ Programming</li>
+        <li>Cybersecurity Fundamentals</li>
+        <li>Networking Concepts</li>
+        <li>Database and Information Systems</li>
+        <li>Web Development Basics</li>
+        <li>Problem Solving and Teamwork</li>
+      </ul>
+    </section>
+
+    <section id="projects" class="card">
+      <h2>Projects</h2>
+      <div class="projects">
+        <div class="project-box">
+          <h3>C++ Programming Work</h3>
+          <p>Built class assignments and practice programs using loops, arrays, functions, and file handling.</p>
+        </div>
+
+        <div class="project-box">
+          <h3>Database Project</h3>
+          <p>Worked on database design, tables, records, and SQL queries for student information system practice.</p>
+        </div>
+
+        <div class="project-box">
+          <h3>Networking & Security</h3>
+          <p>Studied networking concepts, internet structure, and cybersecurity topics as part of my coursework.</p>
+        </div>
+
+        <div class="project-box">
+          <h3>GitHub Portfolio</h3>
+          <p>Created my GitHub profile and personal homepage to showcase my learning and technical growth.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="card">
+      <h2>Contact</h2>
+      <p><strong>Name:</strong> Manan Patel</p>
+      <p><strong>GitHub:</strong> <a href="https://github.com/Mananpatelllll" target="_blank">github.com/Mananpatelllll</a></p>
+      <p><strong>Email:</strong> your-email@example.com</p>
+    </section>
+
+  </div>
+
+  <footer>
+    <p>© 2026 Manan Patel | Personal Portfolio Website</p>
+  </footer>
+
+</body>
+</html>
