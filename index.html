@@ -1,266 +1,714 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Manan Patel | Portfolio</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Manan Patel | Portfolio</title>
+  <style>
+    :root{
+      --bg:#0b1120;
+      --panel:#111827;
+      --panel-2:#1f2937;
+      --text:#e5e7eb;
+      --muted:#94a3b8;
+      --accent:#2563eb;
+      --accent-2:#38bdf8;
+      --white:#ffffff;
+      --card:#0f172a;
+      --border:rgba(255,255,255,0.08);
+      --shadow:0 12px 30px rgba(0,0,0,0.28);
+    }
 
-<style>
+    *{
+      box-sizing:border-box;
+      margin:0;
+      padding:0;
+      scroll-behavior:smooth;
+    }
 
-body{
-font-family:"Segoe UI",Arial,sans-serif;
-margin:0;
-background:#f0f4f8;
-color:#1e293b;
-}
+    body{
+      font-family:Arial, Helvetica, sans-serif;
+      background:linear-gradient(135deg,#0b1120,#111827 45%,#0f172a);
+      color:var(--text);
+      line-height:1.6;
+    }
 
-header{
-background:linear-gradient(135deg,#0f172a,#1e3a8a,#2563eb);
-color:white;
-text-align:center;
-padding:80px 20px;
-}
+    a{
+      color:var(--accent-2);
+      text-decoration:none;
+    }
 
-header h1{
-font-size:50px;
-font-weight:700;
-margin-bottom:10px;
-}
+    a:hover{
+      color:var(--white);
+    }
 
-header p{
-font-size:20px;
-opacity:0.9;
-}
+    .layout{
+      display:flex;
+      min-height:100vh;
+    }
 
-.github-btn{
-display:inline-block;
-margin-top:20px;
-background:#38bdf8;
-color:black;
-padding:12px 22px;
-border-radius:6px;
-text-decoration:none;
-font-weight:bold;
-}
+    .sidebar{
+      width:290px;
+      background:rgba(10,15,28,0.95);
+      border-right:1px solid var(--border);
+      position:fixed;
+      top:0;
+      left:0;
+      bottom:0;
+      padding:32px 22px;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+      backdrop-filter:blur(10px);
+    }
 
-.github-btn:hover{
-background:#0ea5e9;
-}
+    .profile{
+      text-align:center;
+    }
 
-nav{
-background:#111827;
-text-align:center;
-padding:15px;
-}
+    .avatar{
+      width:128px;
+      height:128px;
+      margin:0 auto 18px;
+      border-radius:50%;
+      background:linear-gradient(135deg,var(--accent),var(--accent-2));
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:42px;
+      font-weight:bold;
+      color:var(--white);
+      border:4px solid rgba(255,255,255,0.12);
+      box-shadow:var(--shadow);
+    }
 
-nav a{
-color:white;
-text-decoration:none;
-margin:0 18px;
-font-weight:600;
-font-size:16px;
-}
+    .profile h1{
+      font-size:28px;
+      margin-bottom:8px;
+      color:var(--white);
+      font-weight:800;
+      letter-spacing:.4px;
+    }
 
-nav a:hover{
-color:#38bdf8;
-}
+    .profile p{
+      color:var(--muted);
+      font-size:15px;
+      margin-bottom:18px;
+    }
 
-.container{
-max-width:1000px;
-margin:auto;
-padding:40px 20px;
-}
+    .mini-info{
+      list-style:none;
+      text-align:left;
+      margin-top:18px;
+      padding:18px;
+      border:1px solid var(--border);
+      border-radius:16px;
+      background:rgba(255,255,255,0.03);
+    }
 
-.section{
-background:white;
-padding:30px;
-margin-bottom:30px;
-border-radius:12px;
-box-shadow:0 10px 25px rgba(0,0,0,0.08);
-transition:0.3s;
-}
+    .mini-info li{
+      margin-bottom:12px;
+      color:var(--muted);
+      font-size:14px;
+    }
 
-.section:hover{
-transform:translateY(-5px);
-}
+    .mini-info li:last-child{
+      margin-bottom:0;
+    }
 
-h2{
-font-size:26px;
-border-left:6px solid #38bdf8;
-padding-left:12px;
-margin-bottom:15px;
-}
+    .mini-info span{
+      color:var(--white);
+      font-weight:bold;
+      display:block;
+      margin-bottom:2px;
+    }
 
-ul{
-margin-left:20px;
-line-height:1.8;
-}
+    .nav{
+      margin:26px 0;
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+    }
 
-.project{
-margin-bottom:18px;
-}
+    .nav a{
+      display:block;
+      padding:12px 14px;
+      border-radius:12px;
+      color:var(--text);
+      background:transparent;
+      border:1px solid transparent;
+      font-weight:bold;
+      transition:.25s ease;
+    }
 
-.project b{
-font-size:18px;
-}
+    .nav a:hover{
+      background:rgba(37,99,235,0.14);
+      border-color:rgba(56,189,248,0.25);
+      transform:translateX(4px);
+    }
 
-footer{
-text-align:center;
-background:#111827;
-color:white;
-padding:20px;
-margin-top:40px;
-}
+    .sidebar-buttons{
+      display:grid;
+      gap:12px;
+    }
 
-a{
-color:#2563eb;
-text-decoration:none;
-font-weight:500;
-}
+    .btn{
+      display:inline-block;
+      text-align:center;
+      padding:12px 16px;
+      border-radius:12px;
+      font-weight:bold;
+      transition:.25s ease;
+    }
 
-</style>
+    .btn-primary{
+      background:linear-gradient(135deg,var(--accent),var(--accent-2));
+      color:var(--white);
+      box-shadow:var(--shadow);
+    }
+
+    .btn-primary:hover{
+      color:var(--white);
+      transform:translateY(-2px);
+    }
+
+    .btn-secondary{
+      border:1px solid var(--border);
+      color:var(--text);
+      background:rgba(255,255,255,0.03);
+    }
+
+    .btn-secondary:hover{
+      background:rgba(255,255,255,0.08);
+      color:var(--white);
+    }
+
+    .content{
+      margin-left:290px;
+      width:calc(100% - 290px);
+    }
+
+    .hero{
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      padding:70px 7%;
+      background:
+        radial-gradient(circle at top right, rgba(56,189,248,0.18), transparent 28%),
+        radial-gradient(circle at bottom left, rgba(37,99,235,0.16), transparent 30%);
+    }
+
+    .hero-inner{
+      max-width:900px;
+    }
+
+    .hero-tag{
+      display:inline-block;
+      padding:8px 14px;
+      border-radius:999px;
+      background:rgba(56,189,248,0.12);
+      color:var(--accent-2);
+      font-weight:bold;
+      margin-bottom:18px;
+      border:1px solid rgba(56,189,248,0.22);
+    }
+
+    .hero h2{
+      font-size:58px;
+      line-height:1.1;
+      color:var(--white);
+      margin-bottom:18px;
+      font-weight:900;
+    }
+
+    .hero h2 span{
+      color:var(--accent-2);
+    }
+
+    .hero p{
+      max-width:760px;
+      color:#cbd5e1;
+      font-size:18px;
+      margin-bottom:28px;
+    }
+
+    .hero-actions{
+      display:flex;
+      gap:14px;
+      flex-wrap:wrap;
+    }
+
+    .section{
+      padding:80px 7%;
+    }
+
+    .section-header{
+      margin-bottom:28px;
+    }
+
+    .section-header h3{
+      font-size:34px;
+      color:var(--white);
+      margin-bottom:8px;
+    }
+
+    .section-header p{
+      color:var(--muted);
+      max-width:720px;
+    }
+
+    .grid{
+      display:grid;
+      gap:22px;
+    }
+
+    .grid-2{
+      grid-template-columns:repeat(2,minmax(0,1fr));
+    }
+
+    .grid-3{
+      grid-template-columns:repeat(3,minmax(0,1fr));
+    }
+
+    .card{
+      background:rgba(15,23,42,0.82);
+      border:1px solid var(--border);
+      border-radius:20px;
+      padding:24px;
+      box-shadow:var(--shadow);
+    }
+
+    .card h4{
+      color:var(--white);
+      margin-bottom:12px;
+      font-size:21px;
+    }
+
+    .card p{
+      color:#cbd5e1;
+    }
+
+    .list{
+      padding-left:18px;
+      color:#cbd5e1;
+    }
+
+    .list li{
+      margin-bottom:10px;
+    }
+
+    .pill-wrap{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+    }
+
+    .pill{
+      padding:10px 14px;
+      border-radius:999px;
+      background:rgba(56,189,248,0.1);
+      border:1px solid rgba(56,189,248,0.18);
+      color:#dbeafe;
+      font-weight:bold;
+      font-size:14px;
+    }
+
+    .timeline-item{
+      position:relative;
+      padding-left:22px;
+      margin-bottom:22px;
+    }
+
+    .timeline-item:last-child{
+      margin-bottom:0;
+    }
+
+    .timeline-item::before{
+      content:"";
+      position:absolute;
+      left:0;
+      top:8px;
+      width:10px;
+      height:10px;
+      border-radius:50%;
+      background:var(--accent-2);
+      box-shadow:0 0 0 6px rgba(56,189,248,0.12);
+    }
+
+    .timeline-item h5{
+      color:var(--white);
+      font-size:18px;
+      margin-bottom:6px;
+    }
+
+    .timeline-item .sub{
+      color:var(--accent-2);
+      font-weight:bold;
+      margin-bottom:6px;
+      display:block;
+    }
+
+    .contact-box p{
+      margin-bottom:10px;
+      color:#cbd5e1;
+    }
+
+    .footer{
+      padding:24px 7% 34px;
+      color:var(--muted);
+      border-top:1px solid var(--border);
+    }
+
+    .mobile-top{
+      display:none;
+      position:sticky;
+      top:0;
+      z-index:1000;
+      background:rgba(10,15,28,0.95);
+      backdrop-filter:blur(8px);
+      border-bottom:1px solid var(--border);
+      padding:16px 20px;
+      justify-content:space-between;
+      align-items:center;
+    }
+
+    .mobile-top h1{
+      font-size:22px;
+      color:var(--white);
+    }
+
+    .mobile-links{
+      display:none;
+      background:#0b1120;
+      padding:10px 20px 18px;
+      border-bottom:1px solid var(--border);
+    }
+
+    .mobile-links a{
+      display:block;
+      padding:10px 0;
+      color:var(--text);
+      font-weight:bold;
+    }
+
+    #menu-toggle{
+      background:none;
+      border:none;
+      color:var(--white);
+      font-size:24px;
+      cursor:pointer;
+    }
+
+    @media (max-width:980px){
+      .sidebar{
+        display:none;
+      }
+
+      .content{
+        width:100%;
+        margin-left:0;
+      }
+
+      .mobile-top{
+        display:flex;
+      }
+
+      .hero{
+        min-height:auto;
+        padding-top:110px;
+        padding-bottom:60px;
+      }
+
+      .hero h2{
+        font-size:40px;
+      }
+
+      .grid-2,
+      .grid-3{
+        grid-template-columns:1fr;
+      }
+    }
+
+    @media (max-width:600px){
+      .hero h2{
+        font-size:34px;
+      }
+
+      .section{
+        padding:60px 20px;
+      }
+
+      .hero{
+        padding-left:20px;
+        padding-right:20px;
+      }
+    }
+  </style>
 </head>
-
 <body>
+  <div class="mobile-top">
+    <h1>Manan Patel</h1>
+    <button id="menu-toggle">&#9776;</button>
+  </div>
 
-<header>
+  <div class="mobile-links" id="mobile-links">
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#education">Education</a>
+    <a href="#skills">Skills</a>
+    <a href="#coursework">Coursework</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </div>
 
-<h1>Manan Patel</h1>
+  <div class="layout">
+    <aside class="sidebar">
+      <div>
+        <div class="profile">
+          <div class="avatar">MP</div>
+          <h1>Manan Patel</h1>
+          <p>Computer Science Student<br>Cybersecurity Enthusiast</p>
 
-<p>Computer Science Student | Cybersecurity Enthusiast</p>
+          <ul class="mini-info">
+            <li><span>Email</span>manan.patel@kysu.edu</li>
+            <li><span>University</span>Kentucky State University</li>
+            <li><span>Focus</span>Cybersecurity / Information Security Systems</li>
+            <li><span>From</span>India</li>
+          </ul>
+        </div>
 
-<a class="github-btn" href="https://github.com/Mananpatelllll">
-View My GitHub
-</a>
+        <nav class="nav">
+          <a href="#home">Home</a>
+          <a href="#about">About Me</a>
+          <a href="#education">Education</a>
+          <a href="#skills">Skills</a>
+          <a href="#coursework">Coursework</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
 
-</header>
+      <div class="sidebar-buttons">
+        <a class="btn btn-primary" href="https://github.com/Mananpatelllll" target="_blank">View GitHub</a>
+        <a class="btn btn-secondary" href="demo_resume.pdf" target="_blank">Open Resume</a>
+      </div>
+    </aside>
 
-<nav>
+    <main class="content">
+      <section class="hero" id="home">
+        <div class="hero-inner">
+          <div class="hero-tag">Welcome to my portfolio</div>
+          <h2>I’m <span>Manan Patel</span><br>Computer Science Student & Future Cybersecurity Professional</h2>
+          <p>
+            I am a Computer Science student at Kentucky State University with strong interest in
+            cybersecurity, networking, programming, and technology. I enjoy learning new skills,
+            building projects, solving problems, and growing into a confident technology professional.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#projects">View My Projects</a>
+            <a class="btn btn-secondary" href="#contact">Contact Me</a>
+          </div>
+        </div>
+      </section>
 
-<a href="#about">About</a>
-<a href="#education">Education</a>
-<a href="#skills">Skills</a>
-<a href="#coursework">Coursework</a>
-<a href="#projects">Projects</a>
-<a href="#contact">Contact</a>
+      <section class="section" id="about">
+        <div class="section-header">
+          <h3>About Me</h3>
+          <p>A short introduction about who I am, what I study, and what I am working toward.</p>
+        </div>
 
-</nav>
+        <div class="grid grid-2">
+          <div class="card">
+            <h4>Who I Am</h4>
+            <p>
+              My name is Manan Patel. I am from India and currently studying Computer Science in the
+              United States. I am especially interested in cybersecurity, information security systems,
+              networking, and software development. I enjoy exploring technology and continuously improving my skills.
+            </p>
+          </div>
 
-<div class="container">
+          <div class="card">
+            <h4>What Drives Me</h4>
+            <p>
+              I like building practical technical knowledge through coursework, coding, and hands-on projects.
+              Along with technology, I also value personal growth, confidence, communication, and meeting people
+              from different backgrounds. I enjoy cricket and I like learning things that make me more adaptable.
+            </p>
+          </div>
+        </div>
+      </section>
 
-<div id="about" class="section">
+      <section class="section" id="education">
+        <div class="section-header">
+          <h3>Education</h3>
+          <p>My current academic path and area of concentration.</p>
+        </div>
 
-<h2>About Me</h2>
+        <div class="card">
+          <div class="timeline-item">
+            <h5>Kentucky State University</h5>
+            <span class="sub">Bachelor of Science in Computer Science</span>
+            <p>Specialization: Information Security Systems / Cybersecurity</p>
+          </div>
 
-<p>
-Hello! My name is Manan Patel. I am a Computer Science student at Kentucky State University
-interested in cybersecurity, networking, and software development. I enjoy building
-technical projects and improving my programming skills.
-</p>
+          <div class="timeline-item">
+            <h5>Academic Interests</h5>
+            <p>Cybersecurity, networking, information systems, programming, databases, and technical problem solving.</p>
+          </div>
+        </div>
+      </section>
 
-</div>
+      <section class="section" id="skills">
+        <div class="section-header">
+          <h3>Skills</h3>
+          <p>Technologies and areas I am learning and building experience in.</p>
+        </div>
 
-<div id="education" class="section">
+        <div class="pill-wrap">
+          <span class="pill">C++ Programming</span>
+          <span class="pill">HTML</span>
+          <span class="pill">CSS</span>
+          <span class="pill">SQL</span>
+          <span class="pill">Database Concepts</span>
+          <span class="pill">Networking Fundamentals</span>
+          <span class="pill">Cybersecurity Basics</span>
+          <span class="pill">GitHub</span>
+          <span class="pill">Problem Solving</span>
+          <span class="pill">Teamwork</span>
+        </div>
+      </section>
 
-<h2>Education</h2>
+      <section class="section" id="coursework">
+        <div class="section-header">
+          <h3>Relevant Coursework</h3>
+          <p>Some of the areas and subjects that support my technical growth.</p>
+        </div>
 
-<p><b>Kentucky State University</b></p>
-<p>Bachelor of Science in Computer Science</p>
-<p>Specialization: Information Security Systems / Cybersecurity</p>
+        <div class="grid grid-2">
+          <div class="card">
+            <h4>Programming & Systems</h4>
+            <ul class="list">
+              <li>Introduction to Programming in C++</li>
+              <li>Information Systems</li>
+              <li>Database Systems</li>
+              <li>Software and problem-solving fundamentals</li>
+            </ul>
+          </div>
 
-</div>
+          <div class="card">
+            <h4>Security & Networking</h4>
+            <ul class="list">
+              <li>Networking Fundamentals</li>
+              <li>Cybersecurity Fundamentals</li>
+              <li>Information Security Systems focus courses</li>
+              <li>Technical communication and project development</li>
+            </ul>
+          </div>
+        </div>
+      </section>
 
-<div id="skills" class="section">
+      <section class="section" id="projects">
+        <div class="section-header">
+          <h3>Projects</h3>
+          <p>A few projects and academic areas I have worked on.</p>
+        </div>
 
-<h2>Skills</h2>
+        <div class="grid grid-3">
+          <div class="card">
+            <h4>C++ Sorting Project</h4>
+            <p>
+              Worked on a programming project involving multiple sorting algorithms such as
+              bubble sort, selection sort, quick sort, and shell sort, along with performance comparison.
+            </p>
+          </div>
 
-<ul>
-<li>C++ Programming</li>
-<li>HTML & Web Basics</li>
-<li>SQL & Database Concepts</li>
-<li>Networking Fundamentals</li>
-<li>Cybersecurity Basics</li>
-</ul>
+          <div class="card">
+            <h4>Student Information System Database</h4>
+            <p>
+              Designed database tables, relationships, and SQL queries for a student information system
+              project focused on structured data management.
+            </p>
+          </div>
 
-</div>
+          <div class="card">
+            <h4>GitHub Portfolio Website</h4>
+            <p>
+              Built a personal portfolio website using GitHub Pages to present my education,
+              skills, and projects in a professional format.
+            </p>
+          </div>
 
-<div id="coursework" class="section">
+          <div class="card">
+            <h4>Networking & Cybersecurity Work</h4>
+            <p>
+              Studied networking concepts, internet communication, security basics, and technical
+              topics related to information systems and cybersecurity.
+            </p>
+          </div>
 
-<h2>Relevant Coursework</h2>
+          <div class="card">
+            <h4>Database & Information Systems Assignments</h4>
+            <p>
+              Completed class work involving system components, business processes,
+              database ideas, and practical information systems concepts.
+            </p>
+          </div>
 
-<ul>
-<li>Introduction to Programming (C++)</li>
-<li>Information Systems</li>
-<li>Networking Fundamentals</li>
-<li>Database Systems</li>
-<li>Cybersecurity Fundamentals</li>
-</ul>
+          <div class="card">
+            <h4>Continuous Skill Development</h4>
+            <p>
+              I continue to improve in coding, public speaking, teamwork, and adapting to new
+              academic and technical challenges as I build my future career.
+            </p>
+          </div>
+        </div>
+      </section>
 
-</div>
+      <section class="section" id="contact">
+        <div class="section-header">
+          <h3>Contact</h3>
+          <p>Ways to reach me and view my work.</p>
+        </div>
 
-<div id="projects" class="section">
+        <div class="grid grid-2">
+          <div class="card contact-box">
+            <h4>Contact Information</h4>
+            <p><strong>Name:</strong> Manan Patel</p>
+            <p><strong>Email:</strong> <a href="mailto:manan.patel@kysu.edu">manan.patel@kysu.edu</a></p>
+            <p><strong>GitHub:</strong> <a href="https://github.com/Mananpatelllll" target="_blank">github.com/Mananpatelllll</a></p>
+            <p><strong>University:</strong> Kentucky State University</p>
+          </div>
 
-<h2>Projects</h2>
+          <div class="card contact-box">
+            <h4>Career Goal</h4>
+            <p>
+              My goal is to keep building strong technical skills in computer science and cybersecurity,
+              gain practical experience through projects, and grow into a confident professional in the technology field.
+            </p>
+          </div>
+        </div>
+      </section>
 
-<div class="project">
+      <footer class="footer">
+        <p>© 2026 Manan Patel. Built with HTML and CSS for GitHub Pages.</p>
+      </footer>
+    </main>
+  </div>
 
-<b>C++ Programming Assignments</b>
+  <script>
+    const toggleBtn = document.getElementById("menu-toggle");
+    const mobileLinks = document.getElementById("mobile-links");
 
-<p>
-Created multiple programs using loops, conditions, arrays, and file input/output.
-</p>
+    toggleBtn.addEventListener("click", function () {
+      mobileLinks.style.display =
+        mobileLinks.style.display === "block" ? "none" : "block";
+    });
 
-</div>
-
-<div class="project">
-
-<b>Student Information System Database</b>
-
-<p>
-Designed SQL tables and queries for managing students and course enrollments.
-</p>
-
-</div>
-
-<div class="project">
-
-<b>GitHub Portfolio Website</b>
-
-<p>
-Developed a personal website using GitHub Pages to showcase academic work.
-</p>
-
-</div>
-
-</div>
-
-<div id="contact" class="section">
-
-<h2>Contact</h2>
-
-<p><b>Name:</b> Manan Patel</p>
-
-<p><b>Email:</b>
-<a href="mailto:manan.patel@kysu.edu">
-manan.patel@kysu.edu
-</a>
-</p>
-
-<p><b>GitHub:</b>
-<a href="https://github.com/Mananpatelllll">
-github.com/Mananpatelllll
-</a>
-</p>
-
-</div>
-
-</div>
-
-<footer>
-
-<p>© 2026 Manan Patel</p>
-
-</footer>
-
+    document.querySelectorAll(".mobile-links a").forEach(link => {
+      link.addEventListener("click", function () {
+        mobileLinks.style.display = "none";
+      });
+    });
+  </script>
 </body>
 </html>
