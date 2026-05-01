@@ -36,6 +36,7 @@
     a{
       color:var(--accent-2);
       text-decoration:none;
+      font-weight:bold;
     }
 
     a:hover{
@@ -87,7 +88,6 @@
       margin-bottom:8px;
       color:var(--white);
       font-weight:800;
-      letter-spacing:.4px;
     }
 
     .profile p{
@@ -112,15 +112,10 @@
       font-size:14px;
     }
 
-    .mini-info li:last-child{
-      margin-bottom:0;
-    }
-
     .mini-info span{
       color:var(--white);
       font-weight:bold;
       display:block;
-      margin-bottom:2px;
     }
 
     .nav{
@@ -135,9 +130,7 @@
       padding:12px 14px;
       border-radius:12px;
       color:var(--text);
-      background:transparent;
       border:1px solid transparent;
-      font-weight:bold;
       transition:.25s ease;
     }
 
@@ -254,7 +247,7 @@
 
     .section-header p{
       color:var(--muted);
-      max-width:720px;
+      max-width:760px;
     }
 
     .grid{
@@ -286,6 +279,29 @@
 
     .card p{
       color:#cbd5e1;
+      margin-bottom:10px;
+    }
+
+    .card ul{
+      padding-left:18px;
+      color:#cbd5e1;
+      margin-top:8px;
+    }
+
+    .card li{
+      margin-bottom:8px;
+    }
+
+    .tag{
+      display:inline-block;
+      font-size:13px;
+      color:#dbeafe;
+      background:rgba(56,189,248,0.12);
+      border:1px solid rgba(56,189,248,0.2);
+      padding:6px 10px;
+      border-radius:999px;
+      margin-bottom:12px;
+      font-weight:bold;
     }
 
     .list{
@@ -317,10 +333,6 @@
       position:relative;
       padding-left:22px;
       margin-bottom:22px;
-    }
-
-    .timeline-item:last-child{
-      margin-bottom:0;
     }
 
     .timeline-item::before{
@@ -445,6 +457,7 @@
     }
   </style>
 </head>
+
 <body>
   <div class="mobile-top">
     <h1>Manan Patel</h1>
@@ -457,7 +470,7 @@
     <a href="#education">Education</a>
     <a href="#skills">Skills</a>
     <a href="#coursework">Coursework</a>
-    <a href="#projects">Projects</a>
+    <a href="#projects">COS 200 Work</a>
     <a href="#contact">Contact</a>
   </div>
 
@@ -483,30 +496,31 @@
           <a href="#education">Education</a>
           <a href="#skills">Skills</a>
           <a href="#coursework">Coursework</a>
-          <a href="#projects">Projects</a>
+          <a href="#projects">COS 200 Work</a>
           <a href="#contact">Contact</a>
         </nav>
       </div>
 
       <div class="sidebar-buttons">
         <a class="btn btn-primary" href="https://github.com/Mananpatelllll" target="_blank">View GitHub</a>
-        <a class="btn btn-secondary" href="demo_resume.pdf" target="_blank">Open Resume</a>
+        <a class="btn btn-secondary" href="https://mananpatelllll.github.io" target="_blank">View Homepage</a>
       </div>
     </aside>
 
     <main class="content">
+
       <section class="hero" id="home">
         <div class="hero-inner">
-          <div class="hero-tag">Welcome to my portfolio</div>
+          <div class="hero-tag">Final Project Part II: GitHub Homepage Integration</div>
           <h2>I’m <span>Manan Patel</span><br>Computer Science Student & Future Cybersecurity Professional</h2>
           <p>
-            I am a Computer Science student at Kentucky State University with strong interest in
-            cybersecurity, networking, programming, and technology. I enjoy learning new skills,
-            building projects, solving problems, and growing into a confident technology professional.
+            I am a Computer Science student at Kentucky State University with a strong interest in
+            cybersecurity, networking, programming, databases, business information systems, and AI-based projects.
+            This portfolio highlights my COS 200 projects, labs, class demos, and final GitHub homepage integration.
           </p>
           <div class="hero-actions">
-            <a class="btn btn-primary" href="#projects">View My Projects</a>
-            <a class="btn btn-secondary" href="#contact">Contact Me</a>
+            <a class="btn btn-primary" href="#projects">View COS 200 Projects</a>
+            <a class="btn btn-secondary" href="https://mananpatelllll.github.io/FingerCalculator/" target="_blank">AI Finger Calculator Demo</a>
           </div>
         </div>
       </section>
@@ -522,17 +536,17 @@
             <h4>Who I Am</h4>
             <p>
               My name is Manan Patel. I am from India and currently studying Computer Science in the
-              United States. I am especially interested in cybersecurity, information security systems,
-              networking, and software development. I enjoy exploring technology and continuously improving my skills.
+              United States at Kentucky State University. I am especially interested in cybersecurity,
+              information security systems, networking, databases, and software development.
             </p>
           </div>
 
           <div class="card">
             <h4>What Drives Me</h4>
             <p>
-              I like building practical technical knowledge through coursework, coding, and hands-on projects.
-              Along with technology, I also value personal growth, confidence, communication, and meeting people
-              from different backgrounds. I enjoy cricket and I like learning things that make me more adaptable.
+              I enjoy building practical technical knowledge through coursework, coding, hands-on projects,
+              and real examples. I also value communication, teamwork, confidence, and learning how technology
+              supports businesses, students, and organizations.
             </p>
           </div>
         </div>
@@ -553,7 +567,10 @@
 
           <div class="timeline-item">
             <h5>Academic Interests</h5>
-            <p>Cybersecurity, networking, information systems, programming, databases, and technical problem solving.</p>
+            <p>
+              Cybersecurity, networking, programming, information systems, database systems,
+              business intelligence, AI tools, and technical problem solving.
+            </p>
           </div>
         </div>
       </section>
@@ -565,14 +582,20 @@
         </div>
 
         <div class="pill-wrap">
-          <span class="pill">C++ Programming</span>
           <span class="pill">HTML</span>
           <span class="pill">CSS</span>
+          <span class="pill">JavaScript</span>
+          <span class="pill">Python</span>
+          <span class="pill">Flask</span>
+          <span class="pill">SQLite</span>
           <span class="pill">SQL</span>
-          <span class="pill">Database Concepts</span>
+          <span class="pill">GitHub Pages</span>
+          <span class="pill">Business Intelligence</span>
+          <span class="pill">Database Design</span>
+          <span class="pill">Information Systems</span>
+          <span class="pill">AI Interaction</span>
           <span class="pill">Networking Fundamentals</span>
           <span class="pill">Cybersecurity Basics</span>
-          <span class="pill">GitHub</span>
           <span class="pill">Problem Solving</span>
           <span class="pill">Teamwork</span>
         </div>
@@ -581,27 +604,27 @@
       <section class="section" id="coursework">
         <div class="section-header">
           <h3>Relevant Coursework</h3>
-          <p>Some of the areas and subjects that support my technical growth.</p>
+          <p>Course areas that supported my final GitHub homepage integration project.</p>
         </div>
 
         <div class="grid grid-2">
           <div class="card">
-            <h4>Programming & Systems</h4>
+            <h4>Information Systems & Databases</h4>
             <ul class="list">
-              <li>Introduction to Programming in C++</li>
-              <li>Information Systems</li>
-              <li>Database Systems</li>
-              <li>Software and problem-solving fundamentals</li>
+              <li>Information system roles, components, and business processes</li>
+              <li>Database tables, primary keys, foreign keys, and relationships</li>
+              <li>Student Information System design and web portal development</li>
+              <li>Business Intelligence dashboards and KPI reporting</li>
             </ul>
           </div>
 
           <div class="card">
-            <h4>Security & Networking</h4>
+            <h4>Web, AI, and Technology Planning</h4>
             <ul class="list">
-              <li>Networking Fundamentals</li>
-              <li>Cybersecurity Fundamentals</li>
-              <li>Information Security Systems focus courses</li>
-              <li>Technical communication and project development</li>
+              <li>GitHub profile and GitHub Pages homepage development</li>
+              <li>AI-driven hand calculator and finger-counting interaction</li>
+              <li>Enterprise architecture and ICT planning</li>
+              <li>Networking concepts, TCP/IP, and system security planning</li>
             </ul>
           </div>
         </div>
@@ -609,58 +632,194 @@
 
       <section class="section" id="projects">
         <div class="section-header">
-          <h3>Projects</h3>
-          <p>A few projects and academic areas I have worked on.</p>
+          <h3>COS 200 Projects, Labs, and AI Demos</h3>
+          <p>
+            This section integrates the major projects, labs, and demos I completed in COS 200 during Spring 2026.
+            The final project connects my GitHub profile, GitHub homepage, information systems labs, database work,
+            business intelligence dashboard, and AI finger calculator into one professional portfolio.
+          </p>
         </div>
 
         <div class="grid grid-3">
+
           <div class="card">
-            <h4>C++ Sorting Project</h4>
+            <span class="tag">Project Part I</span>
+            <h4>GitHub Profile</h4>
             <p>
-              Worked on a programming project involving multiple sorting algorithms such as
-              bubble sort, selection sort, quick sort, and shell sort, along with performance comparison.
+              Created my GitHub profile and README page to introduce myself, my background,
+              technical interests, education, and career goals.
+            </p>
+            <p>
+              <a href="https://github.com/Mananpatelllll" target="_blank">View GitHub Profile</a>
             </p>
           </div>
 
           <div class="card">
+            <span class="tag">Lab 1</span>
+            <h4>Study-Room Booking System Prototype</h4>
+            <p>
+              Designed a paper prototype for a Study-Room Booking System to reduce double-booking,
+              wasted reservations, cancellations, and no-shows.
+            </p>
+            <ul>
+              <li>Problem and system goal</li>
+              <li>People, technology, process, and data</li>
+              <li>As-Is and To-Be process</li>
+              <li>DIK analysis and information quality</li>
+              <li>Ethics and security protections</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <span class="tag">Lab 2</span>
+            <h4>Blue Mug Café Strategy + IS Blueprint</h4>
+            <p>
+              Completed a strategy and information systems plan for a campus coffee shop facing
+              long lines, wrong orders, and competition from other options.
+            </p>
+            <ul>
+              <li>Porter’s Five Forces</li>
+              <li>Value chain improvements</li>
+              <li>Benchmarking targets</li>
+              <li>Competitive strategy</li>
+              <li>Run, Grow, Transform plan</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <span class="tag">Lab 3</span>
+            <h4>Smart Campus SRBS ICT + EA Plan</h4>
+            <p>
+              Created an ICT and Enterprise Architecture plan for a smart campus study room
+              booking system.
+            </p>
+            <ul>
+              <li>User stories</li>
+              <li>Hardware and software mapping</li>
+              <li>LAN, Wi-Fi, and security planning</li>
+              <li>Packet switching and TCP/IP explanation</li>
+              <li>Business, data, application, and technology architecture</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <span class="tag">Lab 4</span>
             <h4>Student Information System Database</h4>
             <p>
-              Designed database tables, relationships, and SQL queries for a student information system
-              project focused on structured data management.
+              Designed a Student Information System database for managing students, faculty,
+              courses, capacity, enrollments, grades, and reports.
+            </p>
+            <ul>
+              <li>Primary keys for each table</li>
+              <li>Foreign keys to connect tables</li>
+              <li>Enrollments bridge table for many-to-many relationships</li>
+              <li>Duplicate enrollment prevention</li>
+              <li>Seats remaining and transcript reporting</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <span class="tag">Project Part I</span>
+            <h4>GitHub Homepage</h4>
+            <p>
+              Built my personal portfolio homepage using HTML and CSS and published it through
+              GitHub Pages.
+            </p>
+            <ul>
+              <li>About Me section</li>
+              <li>Education section</li>
+              <li>Skills section</li>
+              <li>Coursework section</li>
+              <li>Projects and contact information</li>
+            </ul>
+            <p>
+              <a href="https://mananpatelllll.github.io" target="_blank">View Homepage</a>
             </p>
           </div>
 
           <div class="card">
-            <h4>GitHub Portfolio Website</h4>
+            <span class="tag">Lab 5</span>
+            <h4>SIS Web Portal</h4>
             <p>
-              Built a personal portfolio website using GitHub Pages to present my education,
-              skills, and projects in a professional format.
+              Developed a web-based Student Information System using Python Flask, SQLite,
+              and HTML.
+            </p>
+            <ul>
+              <li>Add students</li>
+              <li>Add faculty</li>
+              <li>Add courses with capacity and assigned faculty</li>
+              <li>Enroll and drop students</li>
+              <li>Submit grades</li>
+              <li>View transcripts and seats remaining</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <span class="tag">Lab 6</span>
+            <h4>SIS Enrollment BI Dashboard</h4>
+            <p>
+              Built a Business Intelligence dashboard for SIS enrollment analytics and reporting.
+            </p>
+            <ul>
+              <li>Total students and total enrollments</li>
+              <li>Average enrollment per course</li>
+              <li>Overall drop rate</li>
+              <li>Department-level analytics</li>
+              <li>Course-level analytics</li>
+              <li>Term filtering and dashboard reporting</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <span class="tag">Challenge / Extra Work</span>
+            <h4>Implemented Lab 6 SIS Enrollment BI</h4>
+            <p>
+              Extended the BI dashboard work by implementing enrollment analytics and organizing
+              the information into a dashboard format that could be viewed and explained clearly.
+            </p>
+            <ul>
+              <li>KPI cards</li>
+              <li>Tables for department and course data</li>
+              <li>Enrollment reporting</li>
+              <li>Descriptive analytics and OLAP-style breakdowns</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <span class="tag">Lab 7</span>
+            <h4>AI Finger Calculator</h4>
+            <p>
+              Built an AI-driven hand gesture calculator using in-air finger counting interaction.
+              This project connected AI interaction, class demos, and web presentation.
+            </p>
+            <ul>
+              <li>Addition</li>
+              <li>Subtraction</li>
+              <li>Multiplication</li>
+              <li>Division</li>
+              <li>Average calculation</li>
+              <li>Left-hand and right-hand square operations</li>
+            </ul>
+            <p>
+              <a href="https://mananpatelllll.github.io/FingerCalculator/" target="_blank">View Live Demo</a>
             </p>
           </div>
 
           <div class="card">
-            <h4>Networking & Cybersecurity Work</h4>
+            <span class="tag">Final Project Part II</span>
+            <h4>Integrated GitHub Homepage</h4>
             <p>
-              Studied networking concepts, internet communication, security basics, and technical
-              topics related to information systems and cybersecurity.
+              For the final project, I extended my GitHub homepage by integrating all major course
+              projects, labs, and AI demos into one organized portfolio.
             </p>
+            <ul>
+              <li>Connected earlier GitHub profile work</li>
+              <li>Added COS 200 labs and projects</li>
+              <li>Included AI Finger Calculator demo link</li>
+              <li>Prepared the website for final presentation and video recording</li>
+            </ul>
           </div>
 
-          <div class="card">
-            <h4>Database & Information Systems Assignments</h4>
-            <p>
-              Completed class work involving system components, business processes,
-              database ideas, and practical information systems concepts.
-            </p>
-          </div>
-
-          <div class="card">
-            <h4>Continuous Skill Development</h4>
-            <p>
-              I continue to improve in coding, public speaking, teamwork, and adapting to new
-              academic and technical challenges as I build my future career.
-            </p>
-          </div>
         </div>
       </section>
 
@@ -676,21 +835,25 @@
             <p><strong>Name:</strong> Manan Patel</p>
             <p><strong>Email:</strong> <a href="mailto:manan.patel@kysu.edu">manan.patel@kysu.edu</a></p>
             <p><strong>GitHub:</strong> <a href="https://github.com/Mananpatelllll" target="_blank">github.com/Mananpatelllll</a></p>
+            <p><strong>Homepage:</strong> <a href="https://mananpatelllll.github.io" target="_blank">mananpatelllll.github.io</a></p>
+            <p><strong>AI Demo:</strong> <a href="https://mananpatelllll.github.io/FingerCalculator/" target="_blank">Finger Calculator Live Demo</a></p>
             <p><strong>University:</strong> Kentucky State University</p>
           </div>
 
           <div class="card contact-box">
             <h4>Career Goal</h4>
             <p>
-              My goal is to keep building strong technical skills in computer science and cybersecurity,
-              gain practical experience through projects, and grow into a confident professional in the technology field.
+              My goal is to continue building strong technical skills in computer science,
+              cybersecurity, information systems, databases, and software development.
+              I want to gain practical experience through projects and grow into a confident
+              technology professional.
             </p>
           </div>
         </div>
       </section>
 
       <footer class="footer">
-        <p>© 2026 Manan Patel. Built with HTML and CSS for GitHub Pages.</p>
+        <p>© 2026 Manan Patel. Built with HTML and CSS for GitHub Pages. Final Project Part II: COS 200 GitHub Homepage Integration.</p>
       </footer>
     </main>
   </div>
